@@ -1,5 +1,6 @@
 import StarRatings from "react-star-ratings";
 import { MapPin } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 export interface TopPrimepCard {
   title: string;
@@ -29,7 +30,8 @@ function TopPrimpeCard({
 
   return (
     <>
-      <div className=" mx-auto flex flex-col gap-2 w-[90%] justify-between bg-[#FFF]">
+    <Link to={"/homelistingdetails"}>
+    <div className=" mx-auto flex flex-col gap-2 w-[90%] justify-between bg-[#FFF]">
         <div className="relative w-full mx-auto h-[220px]">
           <img className='w-full h-full' src={picture} alt="not found"  />
         </div>
@@ -61,6 +63,8 @@ function TopPrimpeCard({
        
 
       </div>
+    </Link>
+      
     </>
   );
 }
