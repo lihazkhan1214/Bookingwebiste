@@ -14,6 +14,7 @@ import TermsAndServices from './pages/termsandservices/Terms.tsx';
 import ListProperty from './pages/listproperty/ListProperty.tsx';
 import SignUp from './pages/signup/SignUp.tsx';
 import DashboardPage from './pages/dashboard/Dashboard.tsx';
+import ADDlistpage from "./pages/addlistpage/page.tsx"
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,15 @@ const router = createBrowserRouter([
     path: "/partner/sign-up",
     element: <SignUp/>,
   },
+
+  {
+    path: "/addlistpage",
+    element: <ADDlistpage/>,
+  },
+
+
+
+
   {
     path: "/partner/dashboard",
     element: <DashboardPage/>,
