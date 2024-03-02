@@ -2,6 +2,7 @@ import Footer from "../../components/Footer";
 import { Navbar } from "../../components/Navbar";
 import PrimeProperty from "../../components/PrimeProperty";
 import BestFeatures from "../../components/homelistingdetails/BestFeatures";
+import CustomerReviews from "../../components/homelistingdetails/CustomerReviews";
 import Description from "../../components/homelistingdetails/Description";
 import Faqs from "../../components/homelistingdetails/Faqs";
 import ImageGallery from "../../components/homelistingdetails/Gallery";
@@ -14,6 +15,7 @@ const HomeListingDetails = () => {
       <ImageGallery/>
       <Description/>
       <BestFeatures/>
+      <CustomerReviews/>
       <Faqs/>
       <PrimeProperty/>
 

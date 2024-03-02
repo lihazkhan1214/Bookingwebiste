@@ -16,6 +16,8 @@ import TrendingDestinationHoem from "../../components/TrendingDestinationHoem";
 import ExplorHome from "../../components/ExplorHome";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
+import SearchSection from "../../components/search/SearchSection";
+import FiveStar from "../../components/FiveStar";
 interface Card {
   image: string;
   title: string;
@@ -101,7 +103,7 @@ function Home() {
 
     {/* your recents searches */}
     <section className="w-full bg-white my-20 py-10">
-      <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-2 sm:px-6 lg:px-8 z-10 ">
+      <div className="mx-auto flex max-w-7xl items-center justify-center px-0 py-2 sm:px-4 lg:px-8 z-10 ">
         <div className="w-full flex flex-col justify-center items-center gap-10">
           <h2 className="text-3xl text-black font-bold border-b-2 border-blue-600 pb-4">Your Recent Searches</h2>
           <hr />
@@ -140,6 +142,8 @@ function Home() {
 
 
     <PrimeProperty/>
+    <FiveStar/>
+    <SearchSection/>
 <TopApartHome/>
 <TripePlane/>
 <TrendingDestinationHoem/>

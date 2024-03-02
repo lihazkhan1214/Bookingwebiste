@@ -20,7 +20,7 @@ const HomeListingMain = ({hotels}:{hotels: Hotel[]}) => {
     setSelectedTab(index);
   };
 
-  const popularHotel = hotels.slice(0, 5)
+  const popularHotel = hotels.slice(0, 6)
   
 
   return (
