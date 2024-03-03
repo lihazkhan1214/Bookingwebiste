@@ -8,12 +8,12 @@ import multiapart from "../../assets/static/mutipleapament.png";
 import { ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-type Category = "One Apartment" | "Multiple Apartments";
+type Category = "Entier place" | "A private room";
 type Location = "One Location" | "Multiple location";
 
-function Apartment() {
+function Homes() {
   const [step, setStep] = useState<number>(1);
-  const [category, setCategory] = useState<Category>("One Apartment");
+  const [category, setCategory] = useState<Category>("Entire place");
   const [locations, setLocations] = useState<Location>("One Location");
 
   const nextStep = () => {
@@ -39,30 +39,24 @@ function Apartment() {
             <div className=' w-full md:w-[500px] '>
               {step === 1 && (
                 <>
-                  <h2 className="text-3xl mb-5  text-black font-bold ">How many apartments are you listing?</h2>
+                  <h2 className="text-3xl mb-5  text-black font-bold ">What can guests book?</h2>
                   <div className="bg-[#FFF] flex gap-5 flex-col p-5">
-                    <div className={`border-[2px] cursor-pointer flex gap-5 p-2 border-[#ADADAD] ${category === 'One Apartment' && 'border-blue-600'}`} onClick={() => setCategory("One Apartment")}>
+                    <div className={`border-[2px] cursor-pointer flex gap-5 p-2 border-[#ADADAD] ${category === 'Entire place' && 'border-blue-600'}`} onClick={() => setCategory("Entire place")}>
                       <img className='w-[60px] h-[60px]' src={Home} alt="" />
-                      <h1 className='text-[#000000] font-normal text-lg'>One Apartment</h1>
+                      <div className="">
+                      <h1 className='text-[#000000] font-normal text-lg'>Entire place</h1>
+                      <p className="text-sm text-[#000]">Guests are able to use the entire place and do not have to share this with the host or other guests.</p>
+                    
+                      </div>
                     </div>
-                    <div className={`border-[2px] cursor-pointer flex gap-5 p-2 border-[#ADADAD] ${category === 'Multiple Apartments' && 'border-blue-600'}`} onClick={() => setCategory("Multiple Apartments")}>
+                    <div className={`border-[2px] cursor-pointer flex gap-5 p-2 border-[#ADADAD] ${category === 'A private room' && 'border-blue-600'}`} onClick={() => setCategory("A private room")}>
                       <img className='w-[60px] h-[60px]' src={multiapart} alt="" />
-                      <h1 className='text-[#000000] font-normal text-lg'>Multiple Apartments</h1>
+                    <div className="">  <h1 className='text-[#000000] font-normal text-lg'>A private room</h1>
+                      <p className="text-sm text-[#000]">Guests rent a room within the property. There are common areas </p>
+                      </div>
+                    
                     </div>
-                    {category === "Multiple Apartments" && (
-                      <>
-                        <div className={`border-[2px] cursor-pointer flex gap-5 p-2 border-[#ADADAD] ${locations === 'One Location' && 'border-blue-600'}`} onClick={() => setLocations("One Location")}>
-                          <img className='w-[40px] h-[60px]' src={locationimg} alt="" />
-                          <h1 className='text-[#000000] font-normal text-lg'>Yes, these apartments are at the same address or building</h1>
-                        </div>
-                        <div className={`border-[2px] cursor-pointer flex gap-5 p-2 border-[#ADADAD] ${locations === 'Multiple location' && 'border-blue-600'}`} onClick={() => setLocations("Multiple location")}>
-                          <img className='w-[60px] h-[60px]' src={multilcation} alt="" />
-                          <h1 className='text-[#000000] font-normal text-lg'>No, these apartments are at different addresses or buildings</h1>
-                        </div>
-                        <label className='text-[#000000] text-lg font-normal' htmlFor="">Number of properties</label>
-                        <input type="number" placeholder='2' className='border-[1px] p-2 rounded-[8px] w-[100px] outline-none' name="" id="" />
-                      </>
-                    )}
+                    
                     <div className="flex justify-between">
                       <Link to='/list-property' className='mt-5 mx-2 border-[1px] border-blue-600 p-2 rounded-[4px] text-lg text-blue-600'> <ChevronLeft /></Link>
                       <button className='mt-5 bg-blue-600 w-[100%] p-2 rounded-[4px] text-lg text-[#FFF]' onClick={nextStep}>Continue</button>
@@ -72,18 +66,11 @@ function Apartment() {
               )}
               {step === 2 && (
                 <>
-                  <div className="bg-[#FFF] flex gap-5 flex-col p-5">
-                    <p className="text-[#000000] text-sm font-normal text-center">You're listing:</p>
-                    <div className={` cursor-pointer flex justify-center items-center flex-col gap-5 p-2 '}`}>
-                      <img className='w-[60px] h-[60px]' src={Home} alt="" />
-                      <h1 className='text-[#000000] font-bold text-center text-[30px]'>{category} where guests can book the entire place</h1>
-                    </div>
-                    <p className="mt-5 text-center">Does this sound like your property?</p>
-                    <div className="flex gap-5 flex-col justify-center items-center">
-                      <button className='mt-5 bg-blue-600 w-[100%] p-2 rounded-[4px] text-lg text-[#FFF]' onClick={() => setStep(3)}>Continue</button>
-                      <button className=' mx-2 border-[1px] w-[100%] border-blue-600 p-2 rounded-[4px] text-lg text-blue-600'> No, I need to make a change</button>
-                    </div>
-                  </div>
+
+
+     two
+
+                 
                 </>
               )}
               {step === 3 && (
@@ -129,4 +116,4 @@ function Apartment() {
   );
 }
 
-export default Apartment;
+export default Homes;

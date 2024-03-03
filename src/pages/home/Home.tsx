@@ -16,8 +16,6 @@ import TrendingDestinationHoem from "../../components/TrendingDestinationHoem";
 import ExplorHome from "../../components/ExplorHome";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
-import SearchSection from "../../components/search/SearchSection";
-import FiveStar from "../../components/FiveStar";
 interface Card {
   image: string;
   title: string;

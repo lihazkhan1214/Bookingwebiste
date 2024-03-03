@@ -1,4 +1,5 @@
-import romance from "../../assets/dami/romance.png"
+import romance from "../../assets/dami/romance.png";
+import { Link } from "react-router-dom";
 
 const ListDesc = () => {
   return (
@@ -18,7 +19,7 @@ const ListDesc = () => {
                 <h3 className="text-base font-bold">Flexible Scheduling:</h3>
                 <span className="text-base opacity-[50%]">Our platform allows you to set your own schedule for availability, giving you full control over when your property is available for rent.</span>
             </div>
-            <button className="flex justify-center items-center py-3 px-8 border border-[#0351FC] rounded-sm text-[#0351FC] w-max mt-5">Add Property Now</button>
+            <Link to="/addlistpage" className="flex justify-center items-center py-3 px-8 border border-[#0351FC] rounded-sm text-[#0351FC] w-max mt-5">Add Property Now</Link>
         </div>
         <div className="flex-1">
             <img src={romance} alt="image" className="w-full h-full"/>

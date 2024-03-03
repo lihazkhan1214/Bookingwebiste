@@ -92,7 +92,7 @@ const SignUp = () => {
 
         <dialog id="my_modal_3" className="modal border-2 w-full">
           <div className="modal-box px-11 py-9 w-11/12 max-w-5xl">
-          <form method="dialog">
+            <form method="dialog">
               <button className="btn btn-sm btn-circle btn-ghost absolute left-2 top-2">
                 <ArrowLeft color="#0351FC" size={28} />
               </button>

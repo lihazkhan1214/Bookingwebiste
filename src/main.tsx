@@ -16,6 +16,7 @@ import SignUp from './pages/signup/SignUp.tsx';
 import DashboardPage from './pages/dashboard/Dashboard.tsx';
 import ADDlistpage from "./pages/addlistpage/page.tsx"
 import Apartment from './pages/apartment/page.tsx';
+import Homes from './pages/homes/page.tsx';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
   {
     path: "/apartment",
     element: <Apartment/>,
+  },
+
+  {
+    path: "/homes",
+    element: <Homes/>,
   },
 
   {
