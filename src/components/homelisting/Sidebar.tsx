@@ -113,6 +113,7 @@ const Sidebar = () => {
       id: "heating",
     },
   ];
+  
   return (
     <div className="hidden lg:flex flex-col w-1/3  ">
       <h2 className="text-xl md:text-2xl font-semibold ">2443 Hotels Found</h2>
@@ -149,23 +150,23 @@ const Sidebar = () => {
         <div className="w-full flex flex-col gap-2 p-2">
           <span className="text-lg font-semibold">Rating with Stars</span>
           <div className="flex justify-center items-center gap-1 w-full">
-            <button className="flex justify-center items-baseline gap-1 border border-gray-300 rounded-sm py-2 px-2">
+            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
               <span>1</span>
               <Star size={15} color="#FFC661" fill="#FFC661" />
             </button>
-            <button className="flex justify-center items-baseline gap-1 border border-gray-300 rounded-sm py-2 px-2">
+            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
               <span>2</span>
               <Star size={15} color="#FFC661" fill="#FFC661" />
             </button>
-            <button className="flex justify-center items-baseline gap-1 border border-gray-300 rounded-sm py-2 px-2">
+            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
               <span>3</span>
               <Star size={15} color="#FFC661" fill="#FFC661" />
             </button>
-            <button className="flex justify-center items-baseline gap-1 border border-gray-300 rounded-sm py-2 px-2">
+            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
               <span>4</span>
               <Star size={15} color="#FFC661" fill="#FFC661" />
             </button>
-            <button className="flex justify-center items-baseline gap-1 border border-gray-300 rounded-sm py-2 px-2">
+            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
               <span>5</span>
               <Star size={15} color="#FFC661" fill="#FFC661" />
             </button>

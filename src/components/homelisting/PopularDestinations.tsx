@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Top1 from "../../assets/dami/topp1.png"
 function PopularDestinations() {
     const trendingCard =[
@@ -55,7 +56,9 @@ function PopularDestinations() {
                     <img src={card.image} alt="hotel1" className="w-full h-[390px]"/>
                     <h2 className="text-xl font-[600]">{card.title}</h2>
                     <span className="text-lg ">{card.stay} <span className="text-[#0351FC]">{card.number}</span></span>
+                    <Link to={"/homelistingdetails"}>
                     <button className="flex justify-center items-center py-2 px-4 bg-[#0351FC] rounded-sm text-white mb-5">{card.button}</button>
+                    </Link>
 
                 </div>
                 ))}

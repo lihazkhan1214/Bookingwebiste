@@ -6,7 +6,6 @@ import IdealProperties from "../../components/homelisting/IdealProperties";
 import PopularDestinations from "../../components/homelisting/PopularDestinations";
 import { havhcards } from "../home/Home";
 import elipes from "../../assets/images/elipes.png"
-import { hotels } from "../../constants/data";
 import ExplorHome from "../../components/ExplorHome";
 
 
@@ -23,7 +22,7 @@ const HomeListing = () => {
           </h1>
         </div>
       </header>
-      <HomeListingHotel hotels={hotels}/>
+      <HomeListingHotel/>
       <PopularDestinations />
       <ExplorHome/>
       <IdealProperties />

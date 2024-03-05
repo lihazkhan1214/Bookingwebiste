@@ -1,4 +1,12 @@
-import { ArrowLeft, CheckCircle2, Heart, MapPin, Share2, Star } from "lucide-react";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Heart,
+  MapPin,
+  Share2,
+  Star,
+  X,
+} from "lucide-react";
 import { useState } from "react";
 import { RoomsRow } from "../dialog/RoomsRow";
 import DetailsForm from "../dialog/DetailsForm";
@@ -8,6 +16,7 @@ type PopupId = number | null;
 
 const Description = () => {
   const [currentPopup, setCurrentPopup] = useState<PopupId>(null);
+  const [mapModal, setMapModal] = useState(false);
 
   const openPopup = (popupId: number) => {
     setCurrentPopup(popupId);
@@ -17,7 +26,7 @@ const Description = () => {
     setCurrentPopup(null);
   };
 
-  console.log(currentPopup, closePopup)
+  console.log(currentPopup, closePopup);
   return (
     <div className="w-full">
       <div className="mx-auto max-w-7xl padding-x py-10 flex flex-col  gap-5">
@@ -46,7 +55,10 @@ const Description = () => {
               <span className="text-sm md:text-base">
                 Francisco Román Alarcón1060 W Addison St #13 Chicago, IL 60613
               </span>
-              <button className="font-semibold underline text-[#0351FC]">
+              <button
+                onClick={() => setMapModal(!mapModal)}
+                className="font-semibold underline text-[#0351FC]"
+              >
                 Show On map
               </button>
             </div>
@@ -127,7 +139,6 @@ const Description = () => {
                 </button>
               </div>
             </div>
-
           </div>
         </dialog>
         <dialog id="my_modal_4" className=" modal border-2 w-full ">
@@ -143,9 +154,8 @@ const Description = () => {
               </h2>
               <div className="flex justify-center items-center  rounded-md p-3 ">
                 <div className="text-sm md:text-base text-[#409B19]">
-                Almost done! Just fill in the * required info
+                  Almost done! Just fill in the * required info
                 </div>
-                
               </div>
 
               <DetailsForm />
@@ -162,7 +172,6 @@ const Description = () => {
                 </button>
               </div>
             </div>
-
           </div>
         </dialog>
         <dialog id="my_modal_5" className=" modal border-2 w-full ">
@@ -178,9 +187,8 @@ const Description = () => {
               </h2>
               <div className="flex justify-center items-center  rounded-md p-3 ">
                 <div className="text-sm md:text-base text-[#409B19]">
-                Almost done! Just fill in the * required info
+                  Almost done! Just fill in the * required info
                 </div>
-                
               </div>
 
               <DetailsFormtwo />
@@ -197,34 +205,38 @@ const Description = () => {
                 </button>
               </div>
             </div>
-
           </div>
         </dialog>
         <dialog id="my_modal_6" className=" modal border-2 w-full ">
           <div className="modal-box p-5 w-11/12 max-w-5xl h-[90vh]  ">
             <div className="overflow-y-auto h-[95%] gap-5 flex justify-center items-center flex-col mt-5">
-            <CheckCircle2 color="white" fill="green" size={80} />
-              
+              <CheckCircle2 color="white" fill="green" size={80} />
+
               <h2 className="text-2xl md:text-3xl font-semibold text-center">
                 Great ! Booking Complete
               </h2>
-              <p className="text-sm md:text-base w-full md:w-[60%] text-center">Your booking has been done with "Paris Standard Deluxe" at 12-07-2023 to 14-07-2023</p>
-              
+              <p className="text-sm md:text-base w-full md:w-[60%] text-center">
+                Your booking has been done with "Paris Standard Deluxe" at
+                12-07-2023 to 14-07-2023
+              </p>
 
-                <Link to={"/"}>
-                <button
-                  
-                  className="text-white   border border-primary py-2 px-4 w-max focus:outline-none bg-[#0351FC] font-medium rounded text-base"
-                >
+              <Link to={"/"}>
+                <button className="text-white   border border-primary py-2 px-4 w-max focus:outline-none bg-[#0351FC] font-medium rounded text-base">
                   Go to Home
                 </button>
-                </Link>
-                
+              </Link>
             </div>
-
           </div>
         </dialog>
-        
+        {mapModal && (
+          <div className="fixed inset-0 flex justify-center items-center bg-transparen bg-[#00000071]" onClick={()=> setMapModal(!mapModal)}>
+            <div className="relative w-[90%] max-w-[1000px] h-[80%] bg-white rounded-lg shadow-lg ">
+              <X color="#0351FC" size={38}  className="absolute p-1 top-[-40px] right-0 md:right-[-40px] bg-white rounded-full cursor-pointer" onClick={()=> setMapModal(false)}/>
+              {/* Place your map component or content here */}
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d923387.6735800061!2d67.40232599309662!3d25.30477186891725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1709645988432!5m2!1sen!2s" width="800" height="600"   loading="lazy" className="w-full h-full rounded-lg outline-none"></iframe>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

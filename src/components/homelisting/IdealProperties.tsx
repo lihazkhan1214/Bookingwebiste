@@ -70,12 +70,12 @@ const IdealProperties = () => {
           <h2 className="text-3xl w-full md:w-max mx-auto text-center text-[#000000] font-bold border-b-2 border-blue-600 pb-4">
           Get Inspiration for finding your ideal Property
           </h2>
-          <div className="w-full mt-3 border-b border-gray-300 overflow-x-auto  rounded-md overflow-hidden flex justify-stretch items-center">
+          <div className="w-full max-w-[900px] mx-auto mt-3 border-b border-gray-300 gap-5 overflow-x-auto  rounded-md  flex justify-between px-3 items-center">
         {tabs.map((tab, index) => (
           <span
             key={index}
-            className={` text-base font-normal flex-1 text-center py-2 cursor-pointer ${
-              selectedTab === index ? "text-blue-500 font-bold border-b-[3px] text-xl border-blue-600" : ""
+            className={` text-sm md:text-base min-w-fit  font-normal  text-center py-2 w-max cursor-pointer ${
+              selectedTab === index ? "text-blue-500 font-bold border-b-[3px] text-sm md:text-xl border-blue-600 " : ""
             }`}
             onClick={() => handleClick(index)}
           >
