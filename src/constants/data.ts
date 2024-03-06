@@ -6,7 +6,7 @@ export interface Hotel {
     location: string;
     rating: string;
     reviews: string;
-    price: string;
+    price: number;
 }
 
 export const hotels: Hotel[] = [
@@ -17,7 +17,7 @@ export const hotels: Hotel[] = [
         rating: "4.8",
         location: "New York",
         reviews: "376",
-        price: "489"
+        price: 489
     },
     {
         image: Top3,
@@ -26,7 +26,7 @@ export const hotels: Hotel[] = [
         rating: "4.7",
         location: "Swizerland",
         reviews: "312",
-        price: "415"
+        price: 415
     },
     {
         image: Top3,
@@ -35,7 +35,7 @@ export const hotels: Hotel[] = [
         rating: "4.6",
         location: "Karachi",
         reviews: "264",
-        price: "372"
+        price: 372
     },
     {
         image: Top3,
@@ -44,7 +44,7 @@ export const hotels: Hotel[] = [
         rating: "4.9",
         location: "Lahore",
         reviews: "421",
-        price: "542"
+        price: 542
     },
     {
         image: Top3,
@@ -53,7 +53,7 @@ export const hotels: Hotel[] = [
         rating: "4.7",
         location: "Islamabad",
         reviews: "389",
-        price: "501"
+        price: 501
     },
     {
         image: Top3,
@@ -62,7 +62,7 @@ export const hotels: Hotel[] = [
         rating: "4.5",
         location: "New York",
         reviews: "298",
-        price: "397"
+        price: 397
     },
     {
         image: Top3,
@@ -71,7 +71,7 @@ export const hotels: Hotel[] = [
         rating: "4.6",
         location: "New York",
         reviews: "337",
-        price: "438"
+        price: 438
     },
     {
         image: Top3,
@@ -80,7 +80,7 @@ export const hotels: Hotel[] = [
         rating: "4.8",
         location: "New York",
         reviews: "423",
-        price: "554"
+        price: 554
     },
     {
         image: Top3,
@@ -89,7 +89,7 @@ export const hotels: Hotel[] = [
         rating: "4.9",
         location: "New York",
         reviews: "488",
-        price: "599"
+        price: 599
     },
     {
         image: Top3,
@@ -98,7 +98,7 @@ export const hotels: Hotel[] = [
         rating: "4.7",
         location: "New York",
         reviews: "365",
-        price: "476"
+        price: 476
     },
     {
         image: Top3,
@@ -107,7 +107,7 @@ export const hotels: Hotel[] = [
         rating: "4.8",
         location: "New York",
         reviews: "402",
-        price: "523"
+        price: 523
     },
     {
         image: Top3,
@@ -116,7 +116,7 @@ export const hotels: Hotel[] = [
         rating: "4.6",
         location: "New York",
         reviews: "312",
-        price: "415"
+        price: 415
     },
     {
         image: Top3,
@@ -125,7 +125,7 @@ export const hotels: Hotel[] = [
         rating: "4.9",
         location: "New York",
         reviews: "451",
-        price: "582"
+        price: 582
     },
     {
         image: Top3,
@@ -134,7 +134,7 @@ export const hotels: Hotel[] = [
         rating: "4.7",
         location: "New York",
         reviews: "367",
-        price: "478"
+        price: 478
     },
     {
         image: Top3,
@@ -143,7 +143,7 @@ export const hotels: Hotel[] = [
         rating: "4.6",
         location: "New York",
         reviews: "332",
-        price: "429"
+        price: 429
     },
     {
         image: Top3,
@@ -152,7 +152,7 @@ export const hotels: Hotel[] = [
         rating: "4.8",
         location: "New York",
         reviews: "409",
-        price: "532"
+        price: 532
     },
     {
         image: Top3,
@@ -161,7 +161,7 @@ export const hotels: Hotel[] = [
         rating: "4.9",
         location: "New York",
         reviews: "476",
-        price: "597"
+        price: 597
     },
     {
         image: Top3,
@@ -170,7 +170,7 @@ export const hotels: Hotel[] = [
         rating: "4.7",
         location: "New York",
         reviews: "388",
-        price: "499"
+        price: 499
     },
     {
         image: Top3,
@@ -179,7 +179,7 @@ export const hotels: Hotel[] = [
         rating: "4.9",
         location: "New York",
         reviews: "492",
-        price: "613"
+        price: 613
     },
     {
         image: Top3,
@@ -188,7 +188,121 @@ export const hotels: Hotel[] = [
         rating: "4.6",
         location: "New York",
         reviews: "347",
-        price: "458"
+        price: 458
     },
     // Add more objects as needed
 ];
+
+
+export const facilities = [
+    {
+      title: "Free Wifi",
+      id: "fw",
+    },
+    {
+      title: "Parking",
+      id: "par",
+    },
+    {
+      title: "Family room",
+      id: "fr",
+    },
+    {
+      title: "No-smoking room",
+      id: "nsr",
+    },
+    {
+      title: "Airport Shuttle",
+      id: "as",
+    },
+    {
+      title: "Restaurant",
+      id: "res",
+    },
+    {
+      title: "Fitness center",
+      id: "fc",
+    },
+    {
+      title: "Pet friendly",
+      id: "pf",
+    },
+    {
+      title: "Swimming Pool",
+      id: "sp",
+    },
+    {
+      title: "Spa",
+      id: "spa",
+    },
+    {
+      title: "24-hours front desk",
+      id: "fd",
+    },
+  ];
+ export const roomFacilities = [
+    {
+      title: "Air Conditioning",
+      id: "ac",
+    },
+    {
+      title: "Private Bathroom",
+      id: "pb",
+    },
+    {
+      title: "Sea View",
+      id: "sview",
+    },
+    {
+      title: "Private pool",
+      id: "pripool",
+    },
+    {
+      title: "Kitchen",
+      id: "kitch",
+    },
+    {
+      title: "Hot Tub",
+      id: "hotT",
+    },
+    {
+      title: "Bath Tub",
+      id: "bathtub",
+    },
+    {
+      title: "Spa Tub",
+      id: "spatub",
+    },
+    {
+      title: "Terrace",
+      id: "terrace",
+    },
+    {
+      title: "Shower",
+      id: "shower",
+    },
+    {
+      title: "Refrigrator",
+      id: "ref",
+    },
+    {
+      title: "Washing Machine",
+      id: "washM",
+    },
+    {
+      title: "Tv",
+      id: "tv",
+    },
+    {
+      title: "Toilet paper",
+      id: "tiolet paper",
+    },
+    {
+      title: "Coffee/maker",
+      id: "coffemaker",
+    },
+    {
+      title: "Heating",
+      id: "heating",
+    },
+  ];

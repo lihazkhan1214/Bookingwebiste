@@ -1,118 +1,44 @@
 import { Star } from "lucide-react";
+import { Hotel, facilities, roomFacilities } from "../../constants/data";
+import { useState } from "react";
 
-const Sidebar = () => {
-  const facilities = [
-    {
-      title: "Free Wifi",
-      id: "fw",
-    },
-    {
-      title: "Parking",
-      id: "par",
-    },
-    {
-      title: "Family room",
-      id: "fr",
-    },
-    {
-      title: "No-smoking room",
-      id: "nsr",
-    },
-    {
-      title: "Airport Shuttle",
-      id: "as",
-    },
-    {
-      title: "Restaurant",
-      id: "res",
-    },
-    {
-      title: "Fitness center",
-      id: "fc",
-    },
-    {
-      title: "Pet friendly",
-      id: "pf",
-    },
-    {
-      title: "Swimming Pool",
-      id: "sp",
-    },
-    {
-      title: "Spa",
-      id: "spa",
-    },
-    {
-      title: "24-hours front desk",
-      id: "fd",
-    },
-  ];
-  const roomFacilities = [
-    {
-      title: "Air Conditioning",
-      id: "ac",
-    },
-    {
-      title: "Private Bathroom",
-      id: "pb",
-    },
-    {
-      title: "Sea View",
-      id: "sview",
-    },
-    {
-      title: "Private pool",
-      id: "pripool",
-    },
-    {
-      title: "Kitchen",
-      id: "kitch",
-    },
-    {
-      title: "Hot Tub",
-      id: "hotT",
-    },
-    {
-      title: "Bath Tub",
-      id: "bathtub",
-    },
-    {
-      title: "Spa Tub",
-      id: "spatub",
-    },
-    {
-      title: "Terrace",
-      id: "terrace",
-    },
-    {
-      title: "Shower",
-      id: "shower",
-    },
-    {
-      title: "Refrigrator",
-      id: "ref",
-    },
-    {
-      title: "Washing Machine",
-      id: "washM",
-    },
-    {
-      title: "Tv",
-      id: "tv",
-    },
-    {
-      title: "Toilet paper",
-      id: "tiolet paper",
-    },
-    {
-      title: "Coffee/maker",
-      id: "coffemaker",
-    },
-    {
-      title: "Heating",
-      id: "heating",
-    },
-  ];
+interface SidebarProps {
+  applyFilters: (filteredHotels: Hotel[]) => void;
+  hotels: Hotel[];
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ applyFilters, hotels }) => {
+  const [minPrice, setMinPrice] = useState<number>(0);
+const [maxPrice, setMaxPrice] = useState<number>(3000);
+
+const handleFilter = () => {
+  // Filter hotels based on price range
+  const filteredHotels = hotels.filter(hotel => {
+    const hotelPrice = hotel.price;
+    return hotelPrice >= minPrice && hotelPrice <= maxPrice;
+  });
+
+  // Apply filters and pass the filtered hotels to the common parent component
+  applyFilters(filteredHotels);
+  console.log("sidebar", filteredHotels)
+};
+  
+
+const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const value = parseFloat(event.target.value);
+  setMinPrice(value);
+  if (value && maxPrice) {
+    handleFilter();
+  }
+};
+
+const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const value = parseFloat(event.target.value);
+  setMaxPrice(value);
+  if (value && minPrice) {
+    handleFilter();
+  }
+};
   
   return (
     <div className="hidden lg:flex flex-col w-1/3  ">
@@ -125,16 +51,18 @@ const Sidebar = () => {
             <div className="flex-1 flex justify-between items-center border border-gray-400 rounded-md  py-1 px-2">
               <input
                 type="number"
-                placeholder="00"
+                placeholder="min price"
                 className="border-none outline-none w-2/3"
+                onChange={handleMinPriceChange}
               />
               <span className="text-[#0351FC] font-semibold">US $</span>
             </div>
             <div className="flex-1 flex justify-between items-center border border-gray-400 rounded-md  py-1 px-2">
               <input
                 type="number"
-                placeholder="3000+"
+                placeholder="max price"
                 className="border-none outline-none w-2/3"
+                onChange={handleMaxPriceChange}
               />
               <span className="text-[#0351FC] font-semibold">US $</span>
             </div>
