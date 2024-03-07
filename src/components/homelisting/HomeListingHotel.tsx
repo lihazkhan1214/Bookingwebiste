@@ -10,7 +10,6 @@ const HomeListingHotel = () => {
 
   const applyFilters = (filteredHotels: Hotel[]) => {
     setFilteredHotels(filteredHotels);
-    console.log("main", filteredHotels)
   };
   
   return (

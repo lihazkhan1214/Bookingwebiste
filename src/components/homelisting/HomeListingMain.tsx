@@ -8,7 +8,6 @@ interface Tab {
 
 const HomeListingMain = ({ hotels }: { hotels: Hotel[] }) => {
 
-  console.log("render",hotels)
   
   const tabs: Tab[] = [
     { title: "Most Popular" },
@@ -24,7 +23,7 @@ const HomeListingMain = ({ hotels }: { hotels: Hotel[] }) => {
     filterHotels(tabs[index].title);
   };
 
-  // const popularHotel = hotels.slice(0, 6)
+  console.log(filteredHotels.length)
 
   const filterHotels = (title: string) => {
     switch (title) {
@@ -35,13 +34,11 @@ const HomeListingMain = ({ hotels }: { hotels: Hotel[] }) => {
           setFilteredHotels(hotels.slice().sort((a: Hotel, b: Hotel) => a.price - b.price).slice(0, 6));
           break;
           case "Distance":
-            // Dummy filtering based on distance (replace with actual logic)
-            // setFilteredHotels(hotels.slice().sort((a: Hotel, b: Hotel) => parseFloat(a.distance) - parseFloat(b.distance)).slice(0, 6));
+            
             break;
             case "Star Rating":
-              // Sort hotels based on star rating in descending order
               const sortedHotels = hotels.slice().sort((a: Hotel, b: Hotel) => parseFloat(b.rating) - parseFloat(a.rating));
-              // Adjust the number of hotels you want to display here
+             
               setFilteredHotels(sortedHotels.slice(0, 6));
               break;
       default:
@@ -55,6 +52,8 @@ const HomeListingMain = ({ hotels }: { hotels: Hotel[] }) => {
       filterHotels(tabs[selectedTab].title);
     }
   }, [hotels]);
+
+
 
   return (
     <div className="flex flex-col w-full lg:w-2/3 ">
@@ -73,6 +72,12 @@ const HomeListingMain = ({ hotels }: { hotels: Hotel[] }) => {
       </div>
 
       <div className=" w-full flex flex-col gap-2 mt-4">
+        {filteredHotels.length===0 && (<>
+        <div className="w-full h-[200px] flex justify-center items-center text-blue-500 text-lg ubuntu-regular">
+
+          Sorry No Property Found
+        </div>
+        </>)}
         {filteredHotels.map((hotel: Hotel, index: number) => (
           <div
             key={index}

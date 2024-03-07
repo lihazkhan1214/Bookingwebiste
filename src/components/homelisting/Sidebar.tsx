@@ -9,37 +9,72 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ applyFilters, hotels }) => {
   const [minPrice, setMinPrice] = useState<number>(0);
-const [maxPrice, setMaxPrice] = useState<number>(3000);
+  const [maxPrice, setMaxPrice] = useState<number>(3000);
+  const [selectedStars, setSelectedStars] = useState<number>(0);
 
-const handleFilter = () => {
-  // Filter hotels based on price range
-  const filteredHotels = hotels.filter(hotel => {
-    const hotelPrice = hotel.price;
-    return hotelPrice >= minPrice && hotelPrice <= maxPrice;
-  });
+  const handleFilter = () => {
+    const filteredHotels = hotels.filter((hotel) => {
+      const hotelPrice = hotel.price;
+      return hotelPrice >= minPrice && hotelPrice <= maxPrice;
+    });
 
-  // Apply filters and pass the filtered hotels to the common parent component
-  applyFilters(filteredHotels);
-  console.log("sidebar", filteredHotels)
-};
+    applyFilters(filteredHotels);
+  };
+
+  const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(event.target.value);
+    setMinPrice(value);
+    if (value && maxPrice) {
+      handleFilter();
+    }
+  };
+
+  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseFloat(event.target.value);
+    console.log(value);
+    setMaxPrice(value);
+    if (value && minPrice) {
+      handleFilter();
+    }
+  };
+
+  const filterByStars = (hotels: Hotel[], selectedStars: number): Hotel[] => {
+    if (selectedStars === 0) {
+      return hotels;
+    }
+
+    const filteredHotels = hotels.filter((hotel) => {
+      const hotelStars = parseFloat(hotel.rating); // Assuming stars are represented as strings, convert to number
+      return hotelStars >= selectedStars;
+    });
+
+    return filteredHotels;
+  };
+
+  const sortHotelsByStarRating = (hotels: Hotel[], selectedStar: number): Hotel[] => {
+    return hotels.sort((a, b) => {
+      const starRatingA = parseFloat(a.rating);
+      const starRatingB = parseFloat(b.rating);
   
+      if (starRatingA >= selectedStar && starRatingB < selectedStar) {
+        return -1; // a comes first
+      } else if (starRatingA < selectedStar && starRatingB >= selectedStar) {
+        return 1; // b comes first
+      } else {
+        // Sort in ascending order of star ratings
+        return starRatingA - starRatingB;
+      }
+    });
+  };
 
-const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  const value = parseFloat(event.target.value);
-  setMinPrice(value);
-  if (value && maxPrice) {
-    handleFilter();
-  }
-};
+  const handleStarSelect = (star: number) => {
+    const updatedStars = selectedStars === star ? 0 : star;
+    setSelectedStars(updatedStars);
+    const filteredHotels = filterByStars(hotels, updatedStars);
+    const sortedHotels = sortHotelsByStarRating(filteredHotels, selectedStars);
+    applyFilters(sortedHotels);
+  };
 
-const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  const value = parseFloat(event.target.value);
-  setMaxPrice(value);
-  if (value && minPrice) {
-    handleFilter();
-  }
-};
-  
   return (
     <div className="hidden lg:flex flex-col w-1/3  ">
       <h2 className="text-xl md:text-2xl font-semibold ">2443 Hotels Found</h2>
@@ -78,26 +113,18 @@ const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         <div className="w-full flex flex-col gap-2 p-2">
           <span className="text-lg font-semibold">Rating with Stars</span>
           <div className="flex justify-center items-center gap-1 w-full">
-            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
-              <span>1</span>
-              <Star size={15} color="#FFC661" fill="#FFC661" />
-            </button>
-            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
-              <span>2</span>
-              <Star size={15} color="#FFC661" fill="#FFC661" />
-            </button>
-            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
-              <span>3</span>
-              <Star size={15} color="#FFC661" fill="#FFC661" />
-            </button>
-            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
-              <span>4</span>
-              <Star size={15} color="#FFC661" fill="#FFC661" />
-            </button>
-            <button className="flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500">
-              <span>5</span>
-              <Star size={15} color="#FFC661" fill="#FFC661" />
-            </button>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                className={`flex justify-center items-center gap-1 border border-gray-300 rounded-sm py-2 px-2 focus:border-blue-500 ${
+                  selectedStars === star ? "bg-gray-200" : ""
+                }`}
+                onClick={() => handleStarSelect(star)}
+              >
+                <span>{star}</span>
+                <Star size={15} color="#FFC661" fill="#FFC661" />
+              </button>
+            ))}
           </div>
         </div>
 

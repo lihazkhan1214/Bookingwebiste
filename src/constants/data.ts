@@ -185,7 +185,7 @@ export const hotels: Hotel[] = [
         image: Top3,
         title: "Prague Castle View",
         desc: "Enjoy panoramic views of Prague Castle at our elegant hotel in the heart of the city.",
-        rating: "4.6",
+        rating: "5.00",
         location: "New York",
         reviews: "347",
         price: 458
