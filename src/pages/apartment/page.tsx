@@ -114,7 +114,7 @@ function Apartment() {
                     <p className="mt-5 text-center">Does this sound like your property?</p>
                     <div className="flex gap-5  justify-center items-center">
                       <button className='mt-5 mx-2 border-[1px] border-blue-600 p-2 rounded-[4px] text-lg text-blue-600' onClick={prevStep}> <ChevronLeft /></button>
-                      <button className='mt-5 bg-blue-600 w-[100%] p-2 rounded-[4px] text-lg text-[#FFF]' onClick={() => setStep(4)}>Continue</button>
+                      <Link to="/infoform" className='mt-5 bg-blue-600 w-[100%] p-2 text-center rounded-[4px] text-lg text-[#FFF]' >Continue</Link>
                     </div>
                     <button className=' mx-2 border-[1px] w-[100%] border-blue-600 p-2 rounded-[4px] text-lg text-blue-600'> No, I need to make a change</button>
                   </div>

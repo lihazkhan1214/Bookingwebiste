@@ -18,6 +18,7 @@ import ADDlistpage from "./pages/addlistpage/page.tsx"
 import Apartment from './pages/apartment/page.tsx';
 import Homes from './pages/homes/page.tsx';
 
+import Inoformpage from './pages/infoform/Inoformpage.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
   {
     path: "/partner/dashboard",
     element: <DashboardPage/>,
+  },
+  {
+    path: "/infoform",
+    element: <Inoformpage/>,
   },
 ]);
 

@@ -1,8 +1,9 @@
-
+import { Link } from "react-router-dom";
 interface HavhCard {
     image: string;
     title: string;
     desc: string;
+    link:string;
   }
 const ListCard: React.FC<{ card: HavhCard }> = ({ card })=> {
   return (
@@ -10,9 +11,9 @@ const ListCard: React.FC<{ card: HavhCard }> = ({ card })=> {
         <img src={card.image} alt=""  className="w-[110px] h-[110px]"/>
         <h2 className="text-base text-black font-bold mt-2">{card.title}</h2>
         <p className="text-sm h-[40px] text-black opacity-[50%]">{card.desc}</p>
-        <button className="text-blue-600  mt-5  text-base  border border-blue-600 rounded-sm py-2 px-6 cursor-pointer">
+        <Link to={card.link} className="text-blue-600  mt-5  text-base  border border-blue-600 rounded-sm py-2 px-6 cursor-pointer">
            List Your Property
-          </button>
+          </Link>
     </div>
   );
 };
