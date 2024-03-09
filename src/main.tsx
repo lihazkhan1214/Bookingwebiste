@@ -17,8 +17,10 @@ import DashboardPage from './pages/dashboard/Dashboard.tsx';
 import ADDlistpage from "./pages/addlistpage/page.tsx"
 import Apartment from './pages/apartment/page.tsx';
 import Homes from './pages/homes/page.tsx';
+import Hotels from './pages/hotels/Hotels.tsx';
 
 import Inoformpage from './pages/infoform/Inoformpage.tsx';
+import AlterPlace from './pages/aplace/AlterPlace.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -64,6 +66,16 @@ const router = createBrowserRouter([
     path: "/homes",
     element: <Homes/>,
   },
+  {
+    path: "/hotels",
+    element: < Hotels/>,
+  },
+  {
+    path: "/alternativeplaces",
+    element: <AlterPlace/>,
+  },
+
+ 
 
   {
     path: "/partner/dashboard",

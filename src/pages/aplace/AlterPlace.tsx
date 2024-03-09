@@ -87,7 +87,7 @@ const privatecards = [{
 
 
 
-function Homes() {
+function AlterPlace() {
   const [step, setStep] = useState<number>(1);
   const [category, setCategory] = useState<Category>("Entier place");
   const [opcategory, setopcategory] = useState<OpCategory>("One");
@@ -445,4 +445,4 @@ function Homes() {
   );
 }
 
-export default Homes;
+export default AlterPlace;

@@ -2484,7 +2484,7 @@ const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
             <span
               key={index}
               className={` text-base font-normal mx-2 flex-1 text-center py-2 cursor-pointer ${step >= index+1 ? "text-blue-500 font-bold border-b-[3px] text-xl border-blue-600" : ""}`}
-              onClick={() => handleClick(index)}
+              onClick={() => setStep(index+1)}
             >
               {tab.title}
             </span>
