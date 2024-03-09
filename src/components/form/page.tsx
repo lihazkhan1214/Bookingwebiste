@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css';
 import letterimg from "../../assets/static/letter.png";
@@ -33,11 +33,9 @@ const tabs: Tab[] = [
 
 const MultiStepForm: React.FC = () => {
   const [step, setStep] = useState(1);
-  const [value, setValue] = useState<string | undefined>(undefined);
   const [multipleapart, setmultipleapart] = useState(true);
   const [manager, setmanager] = useState(true);
   const [parking, setparking] = useState("no");
-  const [isSwitchOn, setIsSwitchOn] = useState(true);
   const [extrabed, setextrabed] = useState(false);
   const [paymentoption, setpaymentoption] = useState(false);
   const [differenceaddress, setdifferenceaddress] = useState(false);
@@ -122,11 +120,7 @@ const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log(formData);
   };
 
-  const [selectedTab, setSelectedTab] = useState<number | null>(0);
-
-  const handleClick = (index: number) => {
-    setSelectedTab(index);
-  };
+ 
 
   const renderFormStep = () => {
     switch (step) {

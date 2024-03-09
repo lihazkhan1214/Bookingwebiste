@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Navbar } from '../../components/Navbar';
 import Home from "../../assets/static/HOME.png";
-import apartimg from "../../assets/static/aparment.png";
+// import apartimg from "../../assets/static/aparment.png";
 import locationimg from "../../assets/static/location.png";
 import multilcation from "../../assets/static/multiple.png";
 import multiapart from "../../assets/static/mutipleapament.png";
@@ -102,11 +102,11 @@ function Homes() {
     setStep(step - 1);
   };
 
-  const handleSubmit = () => {
-    // Handle form submission
-    // You can submit the form data here
-    // For demonstration, let's just log the data
-  };
+  // const handleSubmit = () => {
+  //   // Handle form submission
+  //   // You can submit the form data here
+  //   // For demonstration, let's just log the data
+  // };
 
 
 
@@ -183,7 +183,7 @@ function Homes() {
 
                       Entiercards.map((item, ind) => (<>
 
-                        <div className={`border-[1px] flex cursor-pointer flex-col gap-5 w-[300px] h-[150px] p-4 rounded-[8px] ${clicked == item.title ? 'border-blue-600 border-[2px]' : 'border-[#ADADAD]'
+                        <div key={ind} className={`border-[1px] flex cursor-pointer flex-col gap-5 w-[300px] h-[150px] p-4 rounded-[8px] ${clicked == item.title ? 'border-blue-600 border-[2px]' : 'border-[#ADADAD]'
                           }`}
                           onClick={() => setClicked(item.title)}
                         >
@@ -206,7 +206,7 @@ function Homes() {
 
                       privatecards.map((item, ind) => (<>
 
-                        <div className={`border-[1px] flex cursor-pointer flex-col gap-5 w-[300px] h-[150px] p-4 rounded-[8px] ${clicked == item.title ? 'border-blue-600 border-[2px]' : 'border-[#ADADAD]'
+                        <div key={ind} className={`border-[1px] flex cursor-pointer flex-col gap-5 w-[300px] h-[150px] p-4 rounded-[8px] ${clicked == item.title ? 'border-blue-600 border-[2px]' : 'border-[#ADADAD]'
                           }`}
                           onClick={() => setClicked(item.title)}
                         >

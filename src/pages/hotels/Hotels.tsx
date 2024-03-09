@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Navbar } from '../../components/Navbar';
 import Home from "../../assets/static/HOME.png";
-import apartimg from "../../assets/static/aparment.png";
+// import apartimg from "../../assets/static/aparment.png";
 import locationimg from "../../assets/static/location.png";
 import multilcation from "../../assets/static/multiple.png";
 import multiapart from "../../assets/static/mutipleapament.png";
@@ -46,40 +46,7 @@ const Entiercards = [{
 
 
 
-const privatecards = [{
-    title: "Guesthouse",
-    desc: "Private home with separate areas for host and guest."
-},
-{
-    title: "Bed and breakfast",
-    desc: "Accommodation in a private home including breakfast"
-},
-{
-    title: "Private accommodation",
-    desc: "A shared accommodation where the guest has a private room and the host lives and is at the accommodation. The host and guests share some of the facilities."
-},
-{
-    title: "Country house",
-    desc: "Private home in the countryside that offers simple accommodation options"
-}
-    ,
-{
-    title: "Apartment hotel",
-    desc: "An apartment without catering but with kitchen facilities, often with certain hotel facilities such as a reception."
-},
-{
-    title: "Farm holiday",
-    desc: "Private farm with simple accommodation options"
-},
-{
-    title: "Lodge",
-    desc: "Private home with overnight accommodation surrounded by nature such as mountains or forest."
-}
 
-
-
-
-];
 
 
 
@@ -102,11 +69,11 @@ function Hotels() {
         setStep(step - 1);
     };
 
-    const handleSubmit = () => {
-        // Handle form submission
-        // You can submit the form data here
-        // For demonstration, let's just log the data
-    };
+    // const handleSubmit = () => {
+    //     // Handle form submission
+    //     // You can submit the form data here
+    //     // For demonstration, let's just log the data
+    // };
 
 
 
@@ -139,7 +106,7 @@ function Hotels() {
 
                                     Entiercards.map((item, ind) => (<>
 
-                                        <div className={`border-[1px] flex cursor-pointer flex-col gap-5 w-[300px] h-[150px] p-4 rounded-[8px] ${clicked == item.title ? 'border-blue-600 border-[2px]' : 'border-[#ADADAD]'
+                                        <div key={ind} className={`border-[1px] flex cursor-pointer flex-col gap-5 w-[300px] h-[150px] p-4 rounded-[8px] ${clicked == item.title ? 'border-blue-600 border-[2px]' : 'border-[#ADADAD]'
                                             }`}
                                             onClick={() => setClicked(item.title)}
                                         >
