@@ -1,6 +1,15 @@
-import React from 'react'
+import React from 'react';
+interface BasicPageProps {
+    onContinue: (step: number) => void;
+}
 
-const FacilitiesPage: React.FC = () =>{
+const FacilitiesPage:React.FC<BasicPageProps> = ({ onContinue }) => {
+
+    const handleContinue = () => {
+        // You can perform any necessary validations here before continuing
+        // For now, simply trigger the onContinue function
+        onContinue(3); // Pass the index of the next step
+    };
     return (
         <div>
             <div className="">
@@ -254,7 +263,7 @@ const FacilitiesPage: React.FC = () =>{
                         </div>
                         <div className="flex pl-4 mt-4 w-full mx-auto">
 
-                            <button className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
+                            <button onClick={handleContinue} className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
                         </div>
                     </section>
                 </div>

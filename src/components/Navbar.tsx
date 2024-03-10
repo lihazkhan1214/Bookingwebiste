@@ -50,18 +50,18 @@ export function Navbar({ bg }: { bg: string }) {
           </ul>
         </div>
         <div className="hidden lg:flex gap-5">
-          <button
-            type="button"
+          <Link
+            to='/partner/sign-up'
             className="mt-4 w-full rounded-sm px-6 py-2 text-sm md:text-base ubuntu-regular border border-white text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             Login
-          </button>
-          <button
-            type="button"
-            className="mt-4 w-full rounded-sm bg-[#0351FC]  px-6 py-2 md:text-sm ubuntu-regular text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
+          </Link>
+       <Link
+            to='/partner/sign-up'
+            className="mt-4 w-full flex items-center justify-center rounded-sm bg-[#0351FC]  px-6 py-2 md:text-sm ubuntu-regular text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
           >
             Register
-          </button>
+          </Link>
         </div>
         <div className="lg:hidden">
           <svg

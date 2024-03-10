@@ -1,38 +1,41 @@
-import React from "react";
-const PrisingPage: React.FC = () =>{
+import React, { useState } from "react";
+import addimg from "../../../assets/images/popup/double-bed-icon.svg"
+interface BasicPageProps {
+  onContinue: (step: number) => void;
+}
+
+const PrisingPage: React.FC<BasicPageProps> = ({ onContinue }) => {
+  const [addroom, setaddroom] = useState(false);
+
+  const handleContinue = () => {
+    // You can perform any necessary validations here before continuing
+    // For now, simply trigger the onContinue function
+    onContinue(2); // Pass the index of the next step
+  };
 
   return (
     <div className="">
 
-      <div className="flex flex-col justify-center text-center items-center bg-white rounded-lg lg:py-12 py-6 lg:px-72 px-6 lg:h-[70vh] h-auto ">
+      {
+        addroom==false?(<> <div className="flex flex-col  mt-5 justify-center text-center items-center bg-white rounded-lg lg:py-12 py-6 lg:px-72 px-6 lg:h-[70vh] h-auto ">
         <div className="py-6 px-5 bg-gray-300 rounded-full">
-          <img className='h-[52px]' src="assets/images/popup/double-bed-icon.svg" alt="img" />
+          <img className='h-[52px]' src={addimg} alt="img" />
         </div>
         <p className='my-6'>No rooms have been added to your property – start adding rooms to describe bed options, layout, and pricing for guests.</p>
 
-        <button onClick={() =>
-                    (
-                      document.getElementById("my_modal_8") as HTMLDialogElement
-                    ).showModal()
-                  } className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Add Room</button>
+        <button
+               onClick={()=>setaddroom(true)} className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Add Room</button>
       </div>
-      <dialog id="my_modal_8" className="modal border-2 w-full">
-        <div className="modal-box px-11 py-9 w-11/12 max-w-5xl">
-          <form method="dialog">
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
-          <div className="flex flex-row justify-center items-center gap-5">
-            <img className="sm:h-[130px] h-[20px] " src="assets/images/popup/logo1.svg" alt="" />
-            <img className="sm:h-[208px] h-[20px]" src="assets/images/popup/logo4.svg" alt="" />
-            <img className="sm:h-[130px] h-[20px]" src="assets/images/popup/logo3.svg" alt="" />
-          </div>
-          <div className="flex justify-center items-center flex-col">
-            <h1 className="font-bold text-2xl text-gray-900 text-center my-4">Hotel, B&Bs & More</h1>
-            <p className="text-gray-400 sm:my-6 my-3 text-center">Whether it&apos;s hotels, B&Bs, guest houses, hostels, or condo hotels, our comprehensive platform caters to a diverse range of properties, serving varied accommodation needs all in one place.</p>
-            <button className="text-white hover:text-white mt-6 border border-primary py-2 px-6 sm:w-[60%] w-full bg-primary focus:outline-none hover:bg-indigo-600 font-semibold rounded text-lg">List Your Property</button>
-          </div>
-        </div>
-      </dialog>
+      
+      
+      </>):(<>
+
+    
+      
+      
+
+     
+
       <div id='my_modal_8' className="">
         <div className="space-y-6 my-4 bg-white px-4 py-6 rounded-md">
           <form action="#">
@@ -47,7 +50,7 @@ const PrisingPage: React.FC = () =>{
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label className="text-sm font-medium text-gray-900 block mb-2">Number of rooms (of this type)</label>
-                <input type="text" name="category" id="category" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="1"  />
+                <input type="text" name="category" id="category" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="1" />
 
               </div>
               <div className="col-span-6 sm:col-span-3">
@@ -63,7 +66,7 @@ const PrisingPage: React.FC = () =>{
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label className="text-sm font-medium text-gray-900 block mb-2">Custom name (optional)</label>
-                <input type="text" name="price" id="price" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Room name custom"  />
+                <input type="text" name="price" id="price" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Room name custom" />
                 <label htmlFor="">
                   <p className="text-gray-400 my-3">Create an optional, custom name for your reference.</p>
                 </label>
@@ -135,13 +138,16 @@ const PrisingPage: React.FC = () =>{
                   <option className="font-semibold text-slate-300">1  $12 </option>
                 </select>
               </div>
-           
+
             </div>
           </form>
         </div>
-        <button className="w-full sm:mt-6 mt-2 text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
+        <button onClick={handleContinue} className="w-full sm:mt-6 mt-2 text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
       </div>
+      </>)
+      }
     </div>
+   
   )
 }
 

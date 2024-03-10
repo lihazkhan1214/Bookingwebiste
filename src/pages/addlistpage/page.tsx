@@ -53,7 +53,7 @@ function ADDlistpage() {
         <div className="w-full flex flex-col justify-center items-center gap-10">
           <h2 className="text-3xl text-center text-black font-bold border-b-2 border-blue-600 pb-4">List your property on LaterStay.com and start welcoming guests in no time!</h2>
 
-          <p className="text-lg text-center font-normal text-[#000] ">To get started, choose the type of property you want to list on Booking.com</p>
+          <p className="text-lg text-center font-normal text-[#000] ">To get started, choose the type of property you want to list on Laterstay.com</p>
          
           <div className="flex w-full justify-center gap-5 items-center flex-wrap">
             

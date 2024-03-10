@@ -1,6 +1,20 @@
 import React from 'react'
 
-const PoliciesPage: React.FC = () => {
+
+interface BasicPageProps {
+    onContinue: (step: number) => void;
+}
+
+const PoliciesPage: React.FC<BasicPageProps> = ({ onContinue }) => {
+
+    const handleContinue = () => {
+        // You can perform any necessary validations here before continuing
+        // For now, simply trigger the onContinue function
+        onContinue(6); // Pass the index of the next step
+    };
+
+
+
     return (
         <div>
             <h1 className="py-5 text-2xl font-semibold title-font mb-2 text-gray-900">Policies</h1>
@@ -61,12 +75,25 @@ const PoliciesPage: React.FC = () => {
                         <div className="join">
                             <div>
                                 <label htmlFor="" className='font-semibold mb-4'>from (optional):</label>
-                                <div className='space-x-2 lg:space-y-0 space-y-2'>
-                                    <input className="mt-3 input bg-primary text-white input-bordered join-item sm:w-24 w-full px-1"
-                                        value="12:00PM" placeholder="12:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="2:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="3:00PM" />
-                                    <select className=" sm:w-24 w-full px-1 select select-bordered join-item">
+                                <div className='flex  mt-3 items-center gap-5 justify-center'>
+
+                                    <div className=" input bg-primary flex justify-center items-center text-white input-bordered join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+
+
+                                    <select className=" sm:w-20 w-full px-1 select select-bordered join-item">
                                         <option disabled selected>others</option>
                                         <option>Sci-fi</option>
                                         <option>Drama</option>
@@ -78,13 +105,25 @@ const PoliciesPage: React.FC = () => {
                         <div className="join mt-5">
                             <div>
                                 <label htmlFor="" className='font-semibold mb-4'>to:</label>
-                                <div className='space-x-2 lg:space-y-0 space-y-2'>
-                                    <input className="mt-3 input input-bordered join-item sm:w-24 w-full px-1 text-white bg-primary"
-                                        value="12:00PM"
-                                        placeholder="12:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="10:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="12:00PM" />
-                                    <select className=" sm:w-24 w-full px-1 select select-bordered join-item">
+                                <div className='flex    mt-3 items-center gap-5 justify-center'>
+
+                                    <div className=" input bg-primary flex justify-center items-center text-white input-bordered join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+
+
+                                    <select className=" sm:w-20 w-full px-1 select select-bordered join-item">
                                         <option disabled selected>others</option>
                                         <option>Sci-fi</option>
                                         <option>Drama</option>
@@ -99,12 +138,25 @@ const PoliciesPage: React.FC = () => {
                         <div className="join">
                             <div>
                                 <label htmlFor="" className='font-semibold mb-4'>From:</label>
-                                <div className='space-x-2 lg:space-y-0 space-y-2'>
-                                    <input className="mt-3 input input-bordered join-item sm:w-24 w-full px-1 text-white bg-primary"
-                                        value="12:00PM" placeholder="12:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="2:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="3:00PM" />
-                                    <select className=" sm:w-24 w-full px-1 select select-bordered join-item">
+                                <div className='flex   mt-3 items-center gap-5 justify-center'>
+
+                                    <div className=" input bg-primary flex justify-center items-center text-white input-bordered join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+
+
+                                    <select className=" sm:w-20 w-full px-1 select select-bordered join-item">
                                         <option disabled selected>others</option>
                                         <option>Sci-fi</option>
                                         <option>Drama</option>
@@ -116,12 +168,25 @@ const PoliciesPage: React.FC = () => {
                         <div className="join mt-5">
                             <div>
                                 <label htmlFor="" className='font-semibold mb-4'>to:</label>
-                                <div className='space-x-2 lg:space-y-0 space-y-2'>
-                                    <input className="mt-3 input input-bordered join-item sm:w-24 w-full px-1 text-white bg-primary"
-                                        value="12:00PM" placeholder="12:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="10:00PM" />
-                                    <input className="input input-bordered join-item sm:w-24 w-full px-1" placeholder="12:00PM" />
-                                    <select className=" sm:w-24 w-full px-1 select select-bordered join-item">
+                                                               <div className='flex flex-wrap mt-3 items-center gap-5 justify-center'>
+
+                                    <div className=" input bg-primary flex   justify-center items-center text-white input-bordered join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+                                    <div className="input input-bordered flex justify-center items-center join-item sm:w-20 w-full px-1">
+
+                                        12:00PM
+                                    </div>
+
+
+
+                                    <select className=" sm:w-20 w-full px-1 select rounded-[4px] select-bordered join-item">
                                         <option disabled selected>others</option>
                                         <option>Sci-fi</option>
                                         <option>Drama</option>
@@ -172,7 +237,7 @@ const PoliciesPage: React.FC = () => {
                 </div>
             </div>
             <div className="flex pl-4 mt-2 w-full mx-auto">
-                <button className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
+                <button onClick={handleContinue} className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
             </div>
         </div>
     )

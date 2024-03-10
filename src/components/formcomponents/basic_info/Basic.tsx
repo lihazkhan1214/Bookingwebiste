@@ -1,7 +1,15 @@
 import React from 'react'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-const BasicPage: React.FC = () => {
+interface BasicPageProps {
+    onContinue: (step: number) => void;
+}
+const BasicPage: React.FC<BasicPageProps> = ({ onContinue }) => {
+    const handleContinue = () => {
+        // You can perform any necessary validations here before continuing
+        // For now, simply trigger the onContinue function
+        onContinue(1); // Pass the index of the next step
+    };
     return (
         <div className="">
             <div className='md:w-[80%] w-full '>
@@ -168,7 +176,7 @@ const BasicPage: React.FC = () => {
 
                 <div className="flex pl-4 mt-4 w-full mx-auto">
 
-                    <button className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
+                    <button onClick={handleContinue} className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
                 </div>
             </div>
         </div>

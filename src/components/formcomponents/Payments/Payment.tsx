@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PaymentPage: React.FC = () => {
     return (
@@ -80,7 +81,7 @@ const PaymentPage: React.FC = () => {
             </div>
             <div className="flex flex-col pl-4 mt-4 w-full mx-auto">
 
-                <button className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Complete Registration & Open for booking</button>
+                <Link to='/' className="w-full text-white text-center bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Complete Registration & Open for booking</Link>
                 <button className="mt-6 w-full border-2 border-primary text-primary text-center bg-white py-2 px-6 focus:outline-none hover:bg-primary hover:text-white rounded">Complete Registration & Open later</button>
                 <p className='my-6 text-center font-semibold text-gray-700'>Almost done! You can always change the info even after you complete the registration.</p>
             </div>

@@ -13,7 +13,6 @@ import AboutUs from './pages/aboutus/AboutUs.tsx';
 import TermsAndServices from './pages/termsandservices/Terms.tsx';
 import ListProperty from './pages/listproperty/ListProperty.tsx';
 import SignUp from './pages/signup/SignUp.tsx';
-import DashboardPage from './pages/dashboard/Dashboard.tsx';
 import ADDlistpage from "./pages/addlistpage/page.tsx"
 import Apartment from './pages/apartment/page.tsx';
 import Homes from './pages/homes/page.tsx';
@@ -77,10 +76,7 @@ const router = createBrowserRouter([
 
  
 
-  {
-    path: "/partner/dashboard",
-    element: <DashboardPage/>,
-  },
+ 
   {
     path: "/infoform",
     element: <Inoformpage/>,

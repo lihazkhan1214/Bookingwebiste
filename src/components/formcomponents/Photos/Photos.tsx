@@ -1,6 +1,21 @@
 import React from 'react';
 
-const CustomInput: React.FC = () =>{
+
+
+
+interface BasicPageProps {
+    onContinue: (step: number) => void;
+}
+
+const CustomInput:React.FC<BasicPageProps> = ({ onContinue }) => {
+
+    const handleContinue = () => {
+        // You can perform any necessary validations here before continuing
+        // For now, simply trigger the onContinue function
+        onContinue(5); // Pass the index of the next step
+    };
+
+
 
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -17,7 +32,7 @@ const CustomInput: React.FC = () =>{
                 </label>
             </div>
 
-            <button className="mt-6 w-full text-white text-center bg-primary border-0 py-3 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
+            <button onClick={handleContinue} className="mt-6 w-full text-white text-center bg-primary border-0 py-3 px-6 focus:outline-none hover:bg-purple-600 rounded">Continue</button>
         </div>
     );
 }

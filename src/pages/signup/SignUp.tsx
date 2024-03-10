@@ -16,7 +16,7 @@ const SignUp = () => {
   console.log(currentPopup, closePopup);
   return (
     <div>
-      <section className="text-gray-600 max-w-[80rem] mx-auto body-font relative">
+      <section className="text-gray-600 py-10 padding-x max-w-[80rem] mx-auto body-font relative">
         <div className="container   mx-auto flex justify-center  sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/5 md:w-1/2 rounded-lg overflow-hidden flex justify-start relative">
             <img src={loginImg} alt="image is her!!" />
