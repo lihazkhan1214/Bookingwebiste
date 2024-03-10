@@ -65,11 +65,10 @@ const MultiStepForm: React.FC = () => {
             {Menus.map((Menu, index) => (
               <li
                 key={index}
-                className={`flex  rounded-md p-1 cursor-pointer hover:bg-light-white text-gray-900 text-sm items-center gap-x-4 
-                                  ${Menu.gap ? "mt-1" : "mt-1"} ${index === 0 && "bg-light-white"
-                  } `}
+                className={`flex  mt-2 rounded-md p-1 cursor-pointer hover:bg-light-white  hover:bg-blue-100  hover:text-gray-900 text-sm items-center gap-x-4 
+                            ${currentStep >=index && "bg-green-600 text-white" }     `}
               >
-                <span className={`text-base font-semibold hover:bg-green-600 hover:text-white w-full duration-200 px-3 py-2 rounded-sm ${Menu.title === selectedComponent?.props?.children && "bg-green-600 text-white"}`} onClick={() => handleClick(Menu.component, index)}>
+                <span className={`text-base font-semibold   w-full duration-200 px-3 py-2 rounded-sm ${Menu.title === selectedComponent?.props?.children && "bg-green-600 text-white"}`} onClick={() => handleClick(Menu.component, index)}>
                   {Menu.title}
                 </span>
 
