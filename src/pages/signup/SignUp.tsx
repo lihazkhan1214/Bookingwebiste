@@ -18,15 +18,15 @@ const SignUp = () => {
     <div>
       <section className="text-gray-600 py-10 padding-x max-w-[80rem] mx-auto body-font relative">
         <div className="container   mx-auto flex justify-center  sm:flex-nowrap flex-wrap">
-          <div className="lg:w-2/5 md:w-1/2 rounded-lg overflow-hidden flex justify-start relative">
-            <img src={loginImg} alt="image is her!!" />
+          <div className="lg:w-2/5 bg-blue-600 md:w-1/2 rounded-lg overflow-hidden flex justify-start relative">
+            <img className="" src={loginImg} alt="image is her!!" />
           </div>
           <div
             className="lg:w-2/4 md:w-1/2 bg-white flex flex-col  w-full md:py-8 mt-8 md:mt-0 px-16 border"
             style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
           >
-            <h2 className="flex items-center font-bold text-2xl text-primary">
-              <img src={logo} alt="logo" className="w-[200px]"/>
+            <h2 className="flex items-center  font-bold text-2xl text-primary">
+              <img src={logo} alt="logo" className="w-[192px] h-[56px]"/>
             </h2>
             <h2 className="text-gray-900 text-xl mb-1 sm:mt-6 mt-2 title-font font-bold">
               Create your partner account

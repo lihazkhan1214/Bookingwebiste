@@ -369,7 +369,7 @@ function Homes() {
                     </div>
                     <p className="mt-5 text-center">Does this sound like your property?</p>
                     <div className="flex gap-5 flex-col justify-center items-center">
-                      <button className='mt-5 bg-blue-600 w-[100%] p-2 rounded-[4px] text-lg text-[#FFF]' onClick={nextStep}>Continue</button>
+                      <Link to="/infoform" className='mt-5 text-center bg-blue-600 w-[100%] p-2 rounded-[4px] text-lg text-[#FFF]'>Continue</Link>
                       <button className=' mx-2 border-[1px] w-[100%] border-blue-600 p-2 rounded-[4px] text-lg text-blue-600'> No, I need to make a change</button>
                     </div>
                   </div>
@@ -386,60 +386,7 @@ function Homes() {
 
         </>
       )}
-      {step == 5 && (
-        <>
-
-<section className="w-full py-10 bg-[#F2F4FD]  relative">
-            <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-2 sm:px-6 lg:px-8 z-10 bg-[#F2F4FD] ">
-              <div className="w-full flex max-sm:flex-col  gap-10">
-                <div className=' w-full md:w-[500px] '>
-
-
-
-          <h2 className="text-3xl mb-5  text-black font-bold ">Where else is your property listed?</h2>
-          <div className="bg-[#FFF] flex gap-5 flex-col p-5">
-            <p className="text-[#000000] text-sm font-normal text-justify">If your property is listed on Airbnb, you can speed up registration by importing it directly to Booking.com.</p>
-            <label className="flex items-center gap-2">
-              <input type="checkbox" name="airbnb" />
-              <span>Airbnb</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input type="checkbox" name="tripadvisor" />
-              <span>TripAdvisor</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input type="checkbox" name="vrbo" />
-              <span>Vrbo</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input type="checkbox" name="anotherWebsite" />
-              <span>Another website</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input type="checkbox" name="notListed" />
-              <span>My property isn't listed on any other websites</span>
-            </label>
-            <p className="mt-5 text-center">Does this sound like your property?</p>
-            <div className="flex gap-5  justify-center items-center">
-              <button className='mt-5 mx-2 border-[1px] border-blue-600 p-2 rounded-[4px] text-lg text-blue-600' onClick={prevStep}> <ChevronLeft /></button>
-              <Link to="/infoform" className='mt-5 bg-blue-600 w-[100%] p-2 text-center rounded-[4px] text-lg text-[#FFF]' >Continue</Link>
-            </div>
-            <button className=' mx-2 border-[1px] w-[100%] border-blue-600 p-2 rounded-[4px] text-lg text-blue-600'> No, I need to make a change</button>
-          </div>
-
-
-          </div>
-              </div>
-              <div className='flex-1'></div>
-            </div>
-          </section>
-        </>
-      )
-
-
-      }
-
-
+      
 
     </>
   );

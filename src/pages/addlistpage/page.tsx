@@ -35,12 +35,7 @@ import ListCard from "../../components/listCard";
     title: "Hotel, B&Bs, and more",
     desc: "Properties like hotels, B&Bs, guest houses, hostels, aparthotels, etc.",
   },
-    {
-    image:places ,
-    link:"/alternativeplaces",
-    title: "Alternative places",
-    desc: "Properties like boats, campsites, luxury tents, etc.",
-  },
+    
   ];
 
 function ADDlistpage() {
