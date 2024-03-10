@@ -1,7 +1,6 @@
 import HomeImage from "../../assets/static/HOME.png"
 import Apartment from "../../assets/static/aparment.png"
 import hetels from "../../assets/static/hotels.png";
-import places from "../../assets/static/places.png"
 import elipes from "../../assets/images/elipes.png"
 import { Navbar } from '../../components/Navbar';
 import ListCard from "../../components/listCard";
