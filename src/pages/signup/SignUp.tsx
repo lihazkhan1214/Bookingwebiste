@@ -1,6 +1,6 @@
 import { useState } from "react";
 import loginImg from "../../assets/images/loginImage.jpg";
-import  logo from "../../assets/images/blogo.png"
+// import logo from "../../assets/images/blogo.png"
 type PopupId = number | null;
 const SignUp = () => {
   const [currentPopup, setCurrentPopup] = useState<PopupId>(null);
@@ -26,7 +26,11 @@ const SignUp = () => {
             style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
           >
             <h2 className="flex items-center  font-bold text-2xl text-primary">
-              <img src={logo} alt="logo" className="w-[192px] h-[56px]"/>
+              {/* <div className="inline-flex  items-center space-x-2">
+
+                <img src={logo} alt="alt" className="w-[190px]" />
+
+              </div> */}
             </h2>
             <h2 className="text-gray-900 text-xl mb-1 sm:mt-6 mt-2 title-font font-bold">
               Create your partner account
@@ -85,7 +89,7 @@ const SignUp = () => {
           </div>
         </div>
 
-        
+
       </section>
     </div>
   );
