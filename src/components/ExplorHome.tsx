@@ -3,7 +3,7 @@ import exp1 from "../assets/images/exp2.png";
 import exp3 from "../assets/images/exp3.png";
 import apimg from "../assets/static/apartement.png";
 import tripim from "../assets/static/trip.svg";
-import homimg from "../assets/static/home.png";
+import homimg from "../assets/static/homehome.png";
 import ringredimg from "../assets/static/ringred.svg"
 
 
